@@ -1,9 +1,12 @@
+import {useEffect, useContext} from "react"
 import Head from "next/head"
 import styled from 'styled-components'
 
 import Welcome from '../components/index/Welcome'
 import PathCard from "../components/index/PathCard"
 import About from "../components/index/About"
+
+import {HeaderContext} from "../context/HeaderContext"
 
 const cardContent = [{
     title: "University",
@@ -19,10 +22,19 @@ const cardContent = [{
     title: "Self-learning",
     content: "Teaching yourself Computer Science&mdash;either online or through academic texts&mdash;is usually the most affordable option. It&lsquo;s also a great way to customise your learning, and to focus on the areas that are most relevant or interesting to you. However, committing to learning Computer Science on your own is no small feat, and staying motivated can be a challenge. The lack of structure makes it difficult to determine what to learn and in which order.",
     pros: ["You are on a budget, or are looking for the best value-for-money.", "You need the flexibility to learn around other commitments.", "You would like the freedom to choose learning material that fits your particular situation."],
-    cons: [<>Having a widely-recognised certificate or degree is a must for you (this might not be as crucial as you think! See <a href="https://www.freecodecamp.org/news/do-you-need-a-computer-science-degree-to-work-in-tech/">here</a> for an example).</>],
+    cons: [<>Having a widely-recognised certificate or degree is a must for you (this might not be as crucial as you
+        think! See <a
+            href="https://www.freecodecamp.org/news/do-you-need-a-computer-science-degree-to-work-in-tech/">here</a> for
+        an example).</>],
 }]
 
 function Index(props) {
+    const {setTheme} = useContext(HeaderContext)
+
+    useEffect(() => {
+        setTheme("index")
+    })
+
     return <>
         <Head>
             <title>Indie Engineering: Learn Computer Science Online for Free</title>
@@ -36,7 +48,7 @@ function Index(props) {
                 <h1>The most common <span>paths to learn Computer Science</span></h1>
             </PathTitle>
             <CardContainer>
-                {cardContent.map((content, i ) => <PathCard key={i} cardContent={content}/>)}
+                {cardContent.map((content, i) => <PathCard key={i} cardContent={content}/>)}
             </CardContainer>
         </PathContainer>
         <About/>
@@ -50,13 +62,13 @@ const PathContainer = styled.div`
 const PathTitle = styled.div`
   display: flex;
   justify-content: center;
-  
+
   h1 {
     line-height: 2.4rem;
     font-size: 2.2rem;
     margin: 0 4rem;
-    
-    @media(max-width: 650px) {
+
+    @media (max-width: 650px) {
       margin: 0 1rem;
     }
   }

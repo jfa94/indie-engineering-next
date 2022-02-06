@@ -1,9 +1,12 @@
-import {useState} from "react"
+import {useContext, useState} from "react"
 import Image from 'next/image'
 import Link from 'next/link'
 import styled, {css} from 'styled-components'
 
+import {HeaderContext} from "../../context/HeaderContext"
+
 function Header() {
+    const {theme} = useContext(HeaderContext)
     const [mobileNavShown, setMobileNavShown] = useState(false)
 
     const handleMenuClick = () => {
@@ -12,7 +15,7 @@ function Header() {
         })
     }
 
-    return <HeaderContainer id="header-container">
+    return <HeaderContainer id="header-container" page={theme}>
         <CustomHeader>
             <MobileMenuContainer>
                 <Link href="/" passHref>
@@ -44,7 +47,7 @@ function Header() {
 }
 
 const HeaderContainer = styled.div`
-  background-color: ${props => props.theme.colors.headerBackground};
+  background-color: ${props => (props.page === "index") ? props.theme.colors.headerBackground : "white"};
   margin: 0;
   padding: 0.5rem;
 

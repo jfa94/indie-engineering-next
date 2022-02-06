@@ -1,8 +1,16 @@
+import {useContext, useEffect} from "react"
 import Head from "next/head"
 
-import CurriculumSection from "../components/curriculum/CurriculumSection";
+import CurriculumSection from "../components/curriculum/CurriculumSection"
+import {HeaderContext} from "../context/HeaderContext"
 
 function Curriculum() {
+    const {setTheme} = useContext(HeaderContext)
+
+    useEffect(() => {
+        setTheme("curriculum")
+    })
+
     return <>
         <Head>
             <title>Indie Engineering: Learn Computer Science Online for Free</title>

@@ -1,11 +1,15 @@
 import Header from './Header'
 import Footer from "./Footer"
 
+import HeaderThemeProvider from "../../context/HeaderContext";
+
 function Layout(props) {
     return <>
-        <Header/>
-        {props.children}
-        <Footer/>
+        <HeaderThemeProvider>
+            <Header/>
+            {props.children}
+            <Footer/>
+        </HeaderThemeProvider>
     </>
 }
 
