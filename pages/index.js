@@ -56,7 +56,7 @@ function Index(props) {
 }
 
 const PathContainer = styled.div`
-  background: linear-gradient(6deg, var(--site-background) 75%, #EFF3FE 75%);
+  background: linear-gradient(6deg, ${props => props.theme.colors.siteBackground} 75%, #EFF3FE 75%);
 `
 
 const PathTitle = styled.div`
@@ -74,7 +74,7 @@ const PathTitle = styled.div`
   }
 
   span {
-    color: var(--secondary-color);
+    color: ${props => props.theme.colors.secondary};
   }
 `
 
