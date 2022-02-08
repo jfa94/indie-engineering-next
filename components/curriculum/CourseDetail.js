@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-function CourseDetail({title, description, institute, prerequisites, duration, effort}) {
-    return <Container>
+function CourseDetail({uri, title, description, institute, prerequisites, duration, effort}) {
+    return <Container href={uri} target="_blank" rel="noopener noreferrer">
         <h3>{title}</h3>
         <p>{description}</p>
         <ul>
@@ -13,8 +13,9 @@ function CourseDetail({title, description, institute, prerequisites, duration, e
     </Container>
 }
 
-const Container = styled.div`
+const Container = styled.a`
   text-decoration: none;
+  display: inline-block;
   line-height: 1.2rem;
   color: ${props => props.theme.colors.headerFont};
   margin-bottom: 1rem;

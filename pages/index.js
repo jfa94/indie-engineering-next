@@ -20,7 +20,7 @@ const cardContent = [{
     cons: ["You will be involved in complex projects, deploying code, or using more than a single language.", "You want or need a wider understanding of Computer Science."],
 }, {
     title: "Self-learning",
-    content: "Teaching yourself Computer Science&mdash;either online or through academic texts&mdash;is usually the most affordable option. It&lsquo;s also a great way to customise your learning, and to focus on the areas that are most relevant or interesting to you. However, committing to learning Computer Science on your own is no small feat, and staying motivated can be a challenge. The lack of structure makes it difficult to determine what to learn and in which order.",
+    content: "Teaching yourself Computer Science—either online or by reading—is usually the most affordable option. It's also a great way to customise your learning, and to focus on the areas that are most relevant or interesting to you. However, committing to learning Computer Science on your own is no small feat, and staying motivated can be a challenge. The lack of structure makes it difficult to determine what to learn and in which order.",
     pros: ["You are on a budget, or are looking for the best value-for-money.", "You need the flexibility to learn around other commitments.", "You would like the freedom to choose learning material that fits your particular situation."],
     cons: [<>Having a widely-recognised certificate or degree is a must for you (this might not be as crucial as you
         think! See <a

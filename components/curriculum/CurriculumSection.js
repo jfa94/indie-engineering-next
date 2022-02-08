@@ -11,7 +11,9 @@ function CurriculumSection({sectionData}) {
 
         <SectionDetail>
             {sectionData.courses.map((course, i) => <CourseDetail
-                key={i} title={course.title}
+                key={i}
+                uri={course.uri}
+                title={course.title}
                 description={course.description}
                 institute={course.institute}
                 prerequisites={course.prerequisites}
